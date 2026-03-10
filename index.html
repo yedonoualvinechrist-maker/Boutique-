@@ -1,22 +1,15 @@
-<!DOCTYPE html><html lang="fr">
-<head>
+<!DOCTYPE html><html lang="fr"><head>
 <meta charset="UTF-8">
-<title>Boutique Fashion</title>
-  <style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Fashion</title><style>
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:black;
 color:white;
+text-align:center;
 min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-}
 
-/* image seulement pour la page d'accueil */
-
-.home{
 background-image:url("e5a961db9ffc2c1ec1e89a573c2c0a3f.jpg");
 background-size:cover;
 background-position:center;
@@ -24,30 +17,39 @@ background-repeat:no-repeat;
 background-attachment:fixed;
 }
 
+/* voile sombre pour mieux voir le texte */
+
+.overlay{
+background:rgba(0,0,0,0.6);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
 h1{
-margin-top:40px;
-font-size:40px;
-text-align:center;
+font-size:50px;
+margin-bottom:40px;
 }
 
 .menu{
 display:flex;
-justify-content:center;
-align-items:center;
-gap:50px;
-margin-top:60px;
+gap:60px;
 flex-wrap:wrap;
+justify-content:center;
 }
 
 .card{
-background:#1e1e1e;
-padding:30px 60px;
+background:rgba(0,0,0,0.7);
+padding:30px 70px;
 border-radius:15px;
 text-decoration:none;
 color:white;
-font-size:22px;
+font-size:26px;
+cursor:pointer;
 transition:0.3s;
-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
 .card:hover{
@@ -55,56 +57,23 @@ background:#ff3c3c;
 transform:scale(1.1);
 }
 
-.produits{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-margin-top:40px;
-padding:20px;
+footer{
+position:absolute;
+bottom:10px;
+font-size:14px;
+opacity:0.8;
 }
 
-.produit{
-background:#1e1e1e;
-padding:20px;
-border-radius:12px;
-width:180px;
-font-size:18px;
-box-shadow:0 5px 15px rgba(0,0,0,0.5);
+</style></head><body><div class="overlay"><h1>Bienvenue dans notre Boutique</h1><div class="menu"><div class="card" onclick="goTo('homme.html')">
+👔 Collection Homme
+</div><div class="card" onclick="goTo('femme.html')">
+👗 Collection Femme
+</div></div><footer>
+© 2026 Fashion Store
+</footer></div><script>
+
+function goTo(page){
+window.location.href = page;
 }
-  </style>
-</head><body classe = "home"><h1>Bienvenue dans notre Boutique</h1><div class="menu"><a href="homme.html" class="card">Collection Homme</a>
 
-<a href="femme.html" class="card">Collection Femme</a>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-
-const categorie = params.get("cat");
-const genre = params.get("genre");
-
-document.getElementById("titre").textContent =
-"Produits " + categorie + " (" + genre + ")";
-
-const produits = {
-chaussures:["Nike","Adidas","Puma","Jordan"],
-pantalons:["Jean Slim","Jean Noir","Cargo","Jogging"],
-habits:["T-shirt","Chemise","Veste","Pull"]
-};
-
-const container = document.getElementById("produits");
-
-produits[categorie].forEach(function(item){
-
-let div = document.createElement("div");
-
-div.className="produit";
-
-div.innerHTML="<p>"+item+"</p>";
-
-container.appendChild(div);
-
-});
-  </script>
-
-</div></body>
-</html>
+</script></body></html>
