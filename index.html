@@ -6,19 +6,22 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
+background:black;
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
 
+/* image seulement pour la page d'accueil */
+
+.home{
 background-image:url("e5a961db9ffc2c1ec1e89a573c2c0a3f.jpg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
-
-color:white;
-min-height:100vh;
-
-display:flex;
-flex-direction:column;
-align-items:center;
 }
 
 h1{
@@ -70,7 +73,7 @@ font-size:18px;
 box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
   </style>
-</head><body><h1>Bienvenue dans notre Boutique</h1><div class="menu"><a href="homme.html" class="card">Collection Homme</a>
+</head><body classe = "home"><h1>Bienvenue dans notre Boutique</h1><div class="menu"><a href="homme.html" class="card">Collection Homme</a>
 
 <a href="femme.html" class="card">Collection Femme</a>
   <script>
