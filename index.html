@@ -48,7 +48,35 @@ box-shadow:0 5px 10px rgba(0,0,0,0.2);
 </head><body><h1>Bienvenue dans notre Boutique</h1><div class="menu"><a href="homme.html" class="card">Collection Homme</a>
 
 <a href="femme.html" class="card">Collection Femme</a>
-  <script></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+const categorie = params.get("cat");
+const genre = params.get("genre");
+
+document.getElementById("titre").textContent =
+"Produits " + categorie + " (" + genre + ")";
+
+const produits = {
+chaussures:["Nike","Adidas","Puma","Jordan"],
+pantalons:["Jean Slim","Jean Noir","Cargo","Jogging"],
+habits:["T-shirt","Chemise","Veste","Pull"]
+};
+
+const container = document.getElementById("produits");
+
+produits[categorie].forEach(function(item){
+
+let div = document.createElement("div");
+
+div.className="produit";
+
+div.innerHTML="<p>"+item+"</p>";
+
+container.appendChild(div);
+
+});
+  </script>
 
 </div></body>
 </html>
